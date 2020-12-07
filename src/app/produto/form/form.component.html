@@ -1,0 +1,125 @@
+<!-- FORMULARIO -->
+<div class="css" style="width: 80%;">
+    <div class="container contact-form w-10 p-3">
+
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Nome -->
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input 
+          class="form-control" 
+          id="nome" 
+          rows="3" 
+          placeholder="nome" name="nome"
+          [(ngModel)]="produto.nome" 
+          #nome="ngModel" 
+          [class.is-invalid]="!nome.valid && nome.touched"
+          required>
+  
+        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+          Nome do Produto.
+        </div>
+      </div>
+
+
+    <!-- CATEGORIA -->
+
+    <div class="form-group">
+      <label for="idCategoria">Categoria</label>
+      <select 
+        #idCategoria="ngModel" 
+        class="form-control" 
+        [class.is-invalid]="!idCategoria.valid && idCategoria.touched" 
+        id="idCategoria"
+        name="idCategoria" 
+        [(ngModel)]="categoria.id" 
+        required>
+
+        <option [ngValue]="undefined">Selecione...</option>
+        
+      <option [ngValue]="1">Mercado</option>
+        <option [ngValue]="2">PROMOÇOES</option>
+        <option [ngValue]="3">LANCHES</option>
+        <option [ngValue]="4">PIZZA</option>
+        <option [ngValue]="5">VEGETARIANA</option>
+        <option [ngValue]="6">JAPONESA</option>
+        <option [ngValue]="7">BEASILEIRA</option>
+        <option [ngValue]="8">BEBIDAS</option>
+        <option [ngValue]="9">AÇAI</option>
+        <option [ngValue]="10">DOCES E BOLOS</option>
+        <option [ngValue]="11">ARABE</option>
+        <option [ngValue]="12">ITALIANA</option>
+      </select>
+      <div  *ngIf="!idCategoria.valid && idCategoria.touched" class="invalid-feedback">
+        Selecione uma Categoria .
+      </div>
+    </div>
+
+
+
+    
+    <!-- DESCRIÇÃO -->
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <input 
+        class="form-control" 
+        id="descricao" 
+        rows="3" 
+        placeholder="descricao" name="descricao"
+        [(ngModel)]="produto.descricao" 
+        #descricao="ngModel" 
+        [class.is-invalid]="!descricao.valid && descricao.touched"
+        required>
+  
+
+      <div *ngIf="!descricao.valid && descricao.touched" class="text-danger">
+        Quantas unidades disponiveis.
+      </div>
+    </div>
+
+     
+
+      <!-- QUANTIDADE -->
+    <div class="form-group">
+        <label for="quantidade">Quantidade</label>
+        <input 
+          class="form-control" 
+          id="quantidade" 
+          rows="3" 
+          placeholder="quantidade" name="quantidade"
+          [(ngModel)]="produto.quantidade" 
+          #quantidade="ngModel" 
+          [class.is-invalid]="!quantidade.valid && quantidade.touched"
+          required>
+    
+  
+        <div *ngIf="!quantidade.valid && quantidade.touched" class="text-danger">
+          Quantas unidades disponiveis.
+        </div>
+      </div>
+
+      <!-- VALOR -->
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input 
+          class="form-control" 
+          id="valor" 
+          rows="3" 
+          placeholder="valor" name="valor"
+          [(ngModel)]="produto.valor" 
+          #valor="ngModel" 
+          [class.is-invalid]="!valor.valid && valor.touched"
+          required>
+    
+  
+        <div *ngIf="!valor.valid && valor.touched" class="text-danger">
+          Quantas unidades disponiveis.
+        </div>
+      </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Salvar</button>
+  </form>
+
+  </div>
+  </div>

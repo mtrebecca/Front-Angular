@@ -1,0 +1,42 @@
+<app-nav-admin></app-nav-admin>
+<app-menu-admin class="float-left"></app-menu-admin>
+<div class="container" style="width: 60%;">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">Adicionar um novo Produto</p>
+    <button class="btn btn-success" routerLink="/produto/criar">Adicionar</button>
+</div>
+<app-error-msg></app-error-msg>
+</div>
+    <app-breadcrumb ></app-breadcrumb>
+    <!-- SEARCH INICIO -->
+    <!--<div class="md-form">
+  <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+</div>
+<ul *ngFor="let data of produto | filter: searchText">
+  <li>{{data}}</li>
+</ul> -->
+    <!-- SEARCH FIM -->
+    <app-breadcrumb ></app-breadcrumb>
+    <div *ngFor="let item of produtos">
+    <div class="card" style="width: 100%; ">
+        <img class="card-img-top" src="#" alt="Card image cap">
+        <div class="card-body">
+          ID: {{item.id}}
+          <h5 class="card-title">{{item.nome}}</h5>
+          <p class="card-text">Descrição :  {{item.descricao}}</p>
+          <p class="card-text">Valor :  {{item.valor}}</p>
+          <p class="card-text">Categoria :  {{item.categoria.nome}}</p>
+          <div>
+          <button class="btn btn-danger" type="submit" (click)="deletaProduto(item.id)">Deletar</button>
+          <button class="btn btn-warning" type="submit" routerLink="/produto/editar/{{item.id}}">Editar</button>
+          
+        </div>
+
+        </div>
+      </div>
+      <app-breadcrumb ></app-breadcrumb>   
+    </div>
+    </div>   
+<app-footer-admin></app-footer-admin>

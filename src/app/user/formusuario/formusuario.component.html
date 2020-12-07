@@ -1,0 +1,170 @@
+<div class="container" style="width: 80%;">
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Nome -->
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input 
+          class="form-control" 
+          id="nome" 
+          rows="3" 
+          placeholder="nome" name="nome"
+          [(ngModel)]="user.nome" 
+          #nome="ngModel" 
+          [class.is-invalid]="!nome.valid && nome.touched"
+          required>
+  
+        <div *ngIf="!nome.valid && nome.touched" class="text-danger">
+          Nome do Produto.
+        </div>
+      </div>
+
+      <!-- Cep -->
+    <div class="form-group">
+        <label for="cep">CEP</label>
+        <input 
+          class="form-control" 
+          id="cep" 
+          rows="3" 
+          placeholder="cep" name="cep"
+          [(ngModel)]="user.cep" 
+          #cep="ngModel" 
+          [class.is-invalid]="!cep.valid && cep.touched"
+          required>
+  
+        <div *ngIf="!cep.valid && cep.touched" class="text-danger">
+          cep
+        </div>
+      </div>
+
+      <!-- CPF -->
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input 
+          class="form-control" 
+          id="cpf" 
+          rows="3" 
+          placeholder="cpf" name="cpf"
+          [(ngModel)]="user.cpf" 
+          #cpf="ngModel" 
+          [class.is-invalid]="!cpf.valid && cpf.touched"
+          required>
+  
+        <div *ngIf="!cpf.valid && cpf.touched" class="text-danger">
+          Cpf
+        </div>
+      </div>
+
+      <!-- Email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          class="form-control" 
+          id="email" 
+          rows="3" 
+          placeholder="email" name="email"
+          [(ngModel)]="user.email" 
+          #email="ngModel" 
+          [class.is-invalid]="!email.valid && email.touched"
+          required>
+  
+        <div *ngIf="!email.valid && email.touched" class="text-danger">
+          Nome do Email
+        </div>
+      </div>
+
+      <!-- Estado -->
+    <div class="form-group">
+        <label for="estado">Estado</label>
+        <input 
+          class="form-control" 
+          id="estadp" 
+          rows="3" 
+          placeholder="estado" name="estado"
+          [(ngModel)]="user.estado" 
+          #estado="ngModel" 
+          [class.is-invalid]="!estado.valid && estado.touched"
+          required>
+  
+        <div *ngIf="!estado.valid && estado.touched" class="text-danger">
+          Nome do estado
+        </div>
+      </div>
+
+      <!-- Fone -->
+    <div class="form-group">
+        <label for="fone">Fone</label>
+        <input 
+          class="form-control" 
+          id="fone" 
+          rows="3" 
+          placeholder="fone" name="fone"
+          [(ngModel)]="user.fone" 
+          #fone="ngModel" 
+          [class.is-invalid]="!fone.valid && fone.touched"
+          required>
+  
+        <div *ngIf="!fone.valid && fone.touched" class="text-danger">
+          Nome do fone
+        </div>
+      </div>
+
+       <!-- Rua -->
+    <div class="form-group">
+        <label for="rua">Rua</label>
+        <input 
+          class="form-control" 
+          id="rua" 
+          rows="3" 
+          placeholder="rua" name="rua"
+          [(ngModel)]="user.rua" 
+          #rua="ngModel" 
+          [class.is-invalid]="!rua.valid && rua.touched"
+          required>
+  
+        <div *ngIf="!rua.valid && rua.touched" class="text-danger">
+          Nome do rua
+        </div>
+      </div>
+       <!-- Senha -->
+    <div class="form-group">
+        <label for="senha">Senha</label>
+        <input 
+          class="form-control" 
+          id="senha" 
+          rows="3" 
+          placeholder="senha" name="senha"
+          [(ngModel)]="user.senha" 
+          #senha="ngModel" 
+          [class.is-invalid]="!senha.valid && senha.touched"
+          required>
+  
+        <div *ngIf="!senha.valid && senha.touched" class="text-danger" type="password">
+        </div>
+      </div>
+
+       <!-- Tipo -->
+    <div class="form-group">
+        <label for="Tipo">Tipo de Acesso</label>
+        <input
+          class="form-control" 
+          id="tipo" 
+          rows="3" 
+          placeholder="tipo" name="tipo"
+          [(ngModel)]="user.tipo" 
+          #tipo="ngModel" 
+          [class.is-invalid]="!tipo.valid && tipo.touched"
+          required>
+        
+  
+        <div *ngIf="!tipo.valid && tipo.touched" class="text-danger">
+          tipo do produto
+        </div>
+      </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Salvar</button>
+      
+
+</form>
+
+</div>

@@ -1,0 +1,13 @@
+listar Produtos
+<div *ngFor="let item of produtos">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    {{item.foto}}
+    <div class="card-body">
+      <h5 class="card-title">{{item.nome}}</h5>
+      <p class="card-text">{{item.descricao}}</p>
+      <a href="#" class="btn btn-primary">{{item.quantidade}}</a>
+      <p class="card-text">{{item.categoria}}</p>
+      <p class="card-text">{{item.valor}}</p>
+    </div>
+  </div>

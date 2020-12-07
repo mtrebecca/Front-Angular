@@ -1,0 +1,56 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+
+        <!-- CATEGORIA -->
+      <label for="categoria">Categoria</label>
+      <select 
+        #categoria="ngModel" 
+        class="form-control" 
+        [class.is-invalid]="!categoria.valid && categoria.touched" 
+        id="categoria"
+        name="categoria" 
+        [(ngModel)]="produto.categoria.id" required>
+        <option [ngValue]="undefined">Selecione...</option>
+        <option value="1">MERCADO</option>
+        <option value="2">PROMOÇOES</option>
+        <option value="3">LANCHES</option>
+        <option value="4">PIZZA</option>
+        <option value="5">VEGETARIANA</option>
+        <option value="6">JAPONESA</option>
+        <option value="7">BEASILEIRA</option>
+        <option value="8">BEBIDAS</option>
+        <option value="9">AÇAI</option>
+        <option value="10">DOCES E BOLOS</option>
+        <option value="11">ARABE</option>
+        <option value="12">ITALIANA</option>
+      </select>
+      <div *ngIf="!categoria && categoria.touched" class="invalid-feedback">
+        Selecione a Categoria.
+      </div>
+
+      <!--CONTEUDO-->
+    </div>
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea 
+        class="form-control" 
+        id="descricao" 
+        rows="3" 
+        placeholder="Seu Produto..." name="conteudo"
+        [(ngModel)]="produto.descricao" 
+        #descricao="ngModel" 
+        [class.is-invalid]="!descricao.valid && descricao.touched"
+        required>
+      </textarea>
+
+      <div *ngIf="!descricao.valid && descricao.touched" class="text-danger">
+        Descreva o Produto.
+      </div>
+
+<button class="btn btn-primary" type="submit" [disabled]="!f.valid">Salvar</button>
+
+    </div>
+
+
+    
+  </form>

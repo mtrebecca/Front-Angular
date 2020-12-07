@@ -1,0 +1,40 @@
+<app-nav-admin></app-nav-admin>
+<app-menu-admin class="float-left"></app-menu-admin>
+<div class="container" style="width: 60%;">
+    <br>
+    
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-text">Adicionar um novo Usuario</p>
+    <button class="btn btn-success" routerLink="/admin/usuarios/criar">Adicionar</button>
+</div>
+<app-error-msg></app-error-msg>
+
+</div>
+
+    <app-breadcrumb></app-breadcrumb>
+
+    <app-breadcrumb></app-breadcrumb>
+    
+<div *ngFor="let user of users">
+    <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        {{user.cpf}}
+        <div class="card-body">
+          <h5 class="card-title">{{user.nome}}</h5>
+          <p class="card-text">Email: {{user.email}} Senha: {{user.senha}}</p>
+          <p class="card-text">Permissão : {{user.tipo}}</p>
+          <p class="card-text">Estado : {{user.estado}} CEP : {{user.cep}} </p>
+
+          <button class="btn btn-danger" type="submit" (click)="delUsuarios(user.cpf)">Deletar</button>
+          <button class="btn btn-warning" type="submit" routerLink="/admin/usuarios/editar/{{user.cpf}}">Editar</button>
+        </div>
+    </div>
+    <app-breadcrumb></app-breadcrumb>
+</div>
+
+</div>
+
+<app-footer-admin></app-footer-admin>

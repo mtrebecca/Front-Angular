@@ -1,0 +1,18 @@
+<app-nav-admin></app-nav-admin>
+<app-menu-admin class="float-left"></app-menu-admin>
+<div class="container mt-3">
+    <div class="row">
+      <div class="container" class="css" style="width: 80%;">
+        <div class="card">
+          <div class="card-header">
+            Adicionar Produto
+          </div>
+          <div class="card-body">
+            <app-error-msg></app-error-msg>
+            <app-form (outputProduto)="addProduto($event)"></app-form>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+<app-footer-admin></app-footer-admin>

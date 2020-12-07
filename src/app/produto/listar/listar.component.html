@@ -1,0 +1,35 @@
+<!--  Lista todos os Produtos    --> 
+<app-nav-menu></app-nav-menu>
+<app-menu-lateral></app-menu-lateral>
+<!--  CONTAINER   --> 
+<div class="css" style="width: 70%;">
+<div class="container w-20 p-3" >
+<!--  NAV Produtos    --> 
+<app-breadcrumb>Produtos</app-breadcrumb>
+<app-error-msg></app-error-msg>
+
+
+<!--  CONTAINER    --> 
+
+<!--  CARDS Produtos    --> 
+<div class="card-columns " >
+<div *ngFor="let item of produtos">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://lh3.googleusercontent.com/proxy/C-Rz8Msupc8EiTRjBBbv-5gxqjHJcUsvWiJCYwHfPQXE8E8w5oyMJQVC0aSshi_rGhHj_pPpnXkUSGKFsvDH4LmYtz3iiLyw8QRFo7dTMMLzznItg1zIinxfUeCB5XttLnYu1_zmkqPtoob8ISVYcw" alt="Card image cap">
+    <div class="card-body">
+      {{item.id}}
+      <h5 class="card-title">{{item.nome}}</h5>
+      <p class="card-text">Descrição :  {{item.descricao}}</p>
+      <p class="card-text">Valor :  {{item.valor}}</p>
+      <p class="card-text">Categoria :  {{item.categoria.nome}}</p>
+      <button class="btn btn-primary" type="submit">Comprar</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<app-breadcrumb></app-breadcrumb>
+</div>
+</div>
+
+<app-footer></app-footer>
